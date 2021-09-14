@@ -1,0 +1,23 @@
+{
+  "name": "microurl-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tiqur/microurl-backend.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tiqur/microurl-backend/issues"
+  },
+  "homepage": "https://github.com/Tiqur/microurl-backend#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.2.1"
+  }
+}
