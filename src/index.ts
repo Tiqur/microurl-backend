@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import { userRouter } from './routes';
+import { errorHandler } from './middleware';
 
 // Initialize app and port
 const app = express();
@@ -16,3 +17,5 @@ app.get('*', (_: Request, res: Response) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+app.use(errorHandler);
