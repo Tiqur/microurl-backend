@@ -5,6 +5,9 @@ import { validationResult } from 'express-validator';
 export function validateRequest(req: Request, res: Response, next: NextFunction) {
   const errors = validationResult(req);
 
-  res.status(400).json({ errors: errors.array() });
-  next();
+  if (errors) {
+    res.status(400).json({ errors: errors.array() });
+  } else {
+    next();
+  }
 }

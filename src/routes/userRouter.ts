@@ -3,7 +3,6 @@ import { body } from 'express-validator';
 import { validateRequest } from '../middleware';
 const router = express.Router();
 
-
 // Create user endpoint
 router.post('/', 
   body('email')
@@ -15,10 +14,8 @@ router.post('/',
       .withMessage('must be between 5 and 16 characters long'),
 
   body('password')
-    .isLength({ min: 5, max: 128 })
-      .withMessage('must be between 5 and 128 characters long')
-    .matches(/\d/)
-      .withMessage('must contain at least 1 number'),
+    .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/)
+      .withMessage('must contain at least 8 characters, 1 letter and 1 number'),
 
   validateRequest,
   (_: Request, res: Response) => {
