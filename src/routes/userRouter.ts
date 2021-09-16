@@ -4,7 +4,7 @@ import { validateRequest } from '../middleware';
 const router = express.Router();
 
 // Create user endpoint
-router.get('/', 
+router.post('/', 
   body('email')
     .isEmail()
       .withMessage('must be a valid email'),
